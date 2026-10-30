@@ -1,229 +1,115 @@
 # BankEase – NextGen Net Banking
 
-A Full-Stack Banking Simulation built using **Java, Spring Boot, Angular, and MySQL**.
-
-BankEase is a web-based banking application developed as a B.Tech CSE project to demonstrate full-stack development, REST API integration, database management, authentication, and banking-style transaction workflows.
+A full-stack banking simulation built with **Java, Spring Boot, Angular, and MySQL**. BankEase demonstrates common online banking workflows through a web-based interface.
 
 ## Overview
 
-BankEase – NextGen Net Banking provides a simulated online banking experience through a user-friendly web interface. It demonstrates how modern banking applications manage accounts, transactions, payments, loans, investments, and administrative operations.
-
-The project follows a layered architecture with Angular on the frontend, Spring Boot on the backend, and MySQL for relational data storage.
+BankEase is a B.Tech CSE project designed to demonstrate full-stack development, REST API integration, relational database management, authentication, and banking-style transaction workflows.
 
 ## Features
 
-### 1. Authentication & Security
-- User registration and login.
-- JWT-based authentication.
-- BCrypt password encryption.
-- OTP verification for authentication workflows.
-- Account lockout after repeated failed login attempts.
-
-### 2. Account Management
-- View registered bank accounts.
-- Check available account balances.
-- Access transaction statements.
-- Monitor account activity.
-
-### 3. Fund Transfers
-- Add and manage beneficiaries.
-- Transfer funds between accounts.
-- Validate available balance and transaction limits.
-- Maintain transaction records.
-- View transfer history.
-
-### 4. Bill Payments
-- Simulated online bill payments.
-- Manage payment transactions.
-- View bill payment history.
-
-### 5. Loan Services
-- Submit loan applications.
-- Calculate Equated Monthly Installments (EMI).
-- Track loan application status.
-- Admin-side loan application processing.
-
-### 6. Investment Services
-- Simulated Fixed Deposits (FD).
-- Simulated Recurring Deposits (RD).
-- Calculate investment maturity amounts.
-- View investment details.
-
-### 7. Dashboard & Notifications
-- Banking activity overview.
-- Account and transaction summaries.
-- In-app notifications.
-
-### 8. Admin & Audit
-- Review audit logs.
-- Manage account lockouts.
-- Process loan applications.
-- Monitor administrative activities.
+- **Authentication & Security** — Registration, login, JWT authentication, OTP verification, and account lockout after repeated failed login attempts.
+- **Account Management** — View accounts, account balances, and transaction statements.
+- **Fund Transfers** — Manage beneficiaries, transfer funds, validate balances and transaction limits, and view transaction records.
+- **Bill Payments** — Pay bills and review payment history.
+- **Loan Services** — Submit loan applications and calculate EMIs.
+- **Investment Services** — Simulated fixed deposits and recurring deposits with maturity calculations.
+- **Dashboard & Notifications** — View banking activity and in-app notifications.
+- **Admin & Audit** — Review audit logs, manage account lockouts, and process loan applications.
 
 ## Tech Stack
 
-| Layer | Technology |
-|---|---|
-| Frontend | Angular, TypeScript, HTML, CSS |
-| Backend | Java, Spring Boot |
-| API | REST APIs |
-| Database | MySQL |
-| ORM | Spring Data JPA, Hibernate |
-| Security | Spring Security, JWT, BCrypt |
-| Build Tools | Maven, npm |
-| IDE | Visual Studio Code |
-
-## Project Architecture
-
-The application follows a three-layer architecture:
-
-1. **Frontend:** Angular handles the user interface and communicates with backend APIs.
-2. **Backend:** Spring Boot manages business logic, authentication, and transaction workflows.
-3. **Database:** MySQL stores user, account, transaction, payment, and other application data.
+| **Layer**   | **Technology**               |
+| ----------- | ---------------------------- |
+| Frontend    | Angular, TypeScript, CSS     |
+| Backend     | Java, Spring Boot            |
+| API         | REST APIs                    |
+| Database    | MySQL                        |
+| ORM         | Spring Data JPA, Hibernate   |
+| Security    | Spring Security, JWT, BCrypt |
+| Build Tools | Maven, npm                   |
 
 ## Project Structure
-
-```text
-BankEase/
-│
+```css
+bankease/
 ├── backend/
 │   ├── pom.xml
 │   └── src/
-│       └── main/
-│           ├── java/
-│           └── resources/
-│
 ├── frontend/
 │   ├── package.json
 │   └── src/
-│
 ├── docs/
 │   └── BankEase_System_Design.docx
-│
 ├── .gitignore
 └── README.md
+
 ```
 
 ## Prerequisites
 
-Install the following software before running the application:
+Install the following before running the project:
 
-- Java JDK (version compatible with the backend configuration).
-- Apache Maven.
-- Node.js and npm.
-- MySQL Server.
-- Visual Studio Code (VS Code).
+- Java JDK 17 or compatible version
+- Maven
+- Node.js and npm
+- MySQL Server
+- Visual Studio Code (VS Code)
 
-## Installation & Setup
+## Run Locally
 
-### Step 1: Clone the Repository
+### 1. Clone the repository
 
-```bash
-git clone https://github.com/Devanshgoyal-os/BankEase.git
-cd BankEase
-```
+git clone [https://github.com/Devanshgoyal-os/BankEase.git](https://github.com/Devanshgoyal-os/BankEase.git) cd BankEase
 
-### Step 2: Configure MySQL
+### 2. Configure MySQL
 
-Start your MySQL Server and create the database:
+Start MySQL Server and create the database:
 
-```sql
 CREATE DATABASE bankease;
-```
 
-Open:
+Open `backend/src/main/resources/application.properties` and configure your local database username and password. Keep credentials private and never commit real passwords or production secrets.
 
-`backend/src/main/resources/application.properties`
+### 3. Start the backend
 
-Configure your local database username, password, and other required application properties.
+Open a terminal in the project root:
 
-Keep all credentials and JWT secrets private. Never commit actual passwords or production secrets.
+cd backend mvn spring-boot:run
 
-### Step 3: Start the Backend
-
-Open a terminal in the project directory:
-
-```bash
-cd backend
-mvn spring-boot:run
-```
-
-Backend URL:
+The Spring Boot backend runs at:
 
 `http://localhost:8080`
 
-### Step 4: Start the Frontend
+### 4. Start the frontend
 
-Open a second terminal in the project directory:
+Open a second terminal in the project root:
 
-```bash
-cd frontend
-npm install
-npm start
-```
+cd frontend npm install npm start
 
-Frontend URL:
+Open the application in your browser:
 
 `http://localhost:4200`
 
-Keep the backend, frontend, and MySQL Server running while using the application.
-
-## Application Screenshots
-
-Screenshots of the application can be added here to demonstrate the user interface and major banking workflows.
-
-### Login Page
-
-![Login Page](docs/screenshots/login.png)
-
-
-
-![Dashboard](docs/screenshots/dashboard.png)
-
-### Account Management
-
-![Account Management](docs/screenshots/accounts.png)
-
-### Fund Transfer
-
-![Fund Transfer](docs/screenshots/transfer.png)
-
-### Bill Payments
-
-![Bill Payments](docs/screenshots/payments.png)
-
-### Loan Services
-
-![Loan Services](docs/screenshots/loans.png)
-
-*Replace these sample image paths with actual screenshots added to the repository.*
-
-## Documentation
-
-Detailed system design documentation is available in:
-
-`docs/BankEase_System_Design.docx`
-
-It includes the project's architecture, workflow, database design, and module descriptions.
+Keep both terminals and the MySQL Server running while using the application.
 
 ## Security Notes
 
-- BankEase is an educational banking simulation, not a real banking platform.
+- This project is an educational banking simulation.
 - OTP delivery is simulated for local development.
-- Do not use real banking credentials or sensitive customer information.
-- Database passwords and JWT signing secrets must never be exposed publicly.
-- Authentication, authorization, and transaction handling should be reviewed before deployment.
-- Production deployment requires HTTPS and additional security hardening.
+- Do not use real banking credentials or sensitive customer data.
+- Review authentication, authorization, transaction handling, and configuration before any deployment.
+- Never publish database passwords, JWT signing secrets, or other credentials.
+
+## Documentation
+
+See `docs/BankEase_System_Design.docx` for the project's system design documentation.
 
 ## Future Improvements
 
-- Automated backend and frontend testing.
-- Improved transaction validation and error handling.
-- Enhanced responsive UI and dashboard analytics.
-- Secure environment-based configuration.
-- Improved logging and monitoring.
-- Cloud deployment with HTTPS.
-- Additional security and performance optimizations.
+- Automated backend and frontend testing
+- Improved transaction validation and error handling
+- Responsive UI refinements and dashboard analytics
+- Secure environment-based configuration
+- Deployment with HTTPS and production-grade security
 
 ## Author
 
@@ -234,4 +120,4 @@ It includes the project's architecture, workflow, database design, and module de
 
 ---
 
-*Built as a Full-Stack B.Tech CSE project to explore Java backend development, Angular frontend development, REST API integration, and MySQL database management.*
+*Built as a full-stack B.Tech CSE project to explore Java backend development, Angular frontend development, and MySQL database integration. you know the mu bankease so it is correct or require something and i have also ss of website*
